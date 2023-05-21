@@ -39,8 +39,8 @@ public class _01_GoogleTest {
 
     @Test(priority = 2)
     public void validateSearchBar(){
-        WebElement searchInputBox = driver.findElement(By.name("q"));
-        Assert.assertTrue(searchInputBox.isDisplayed());
+        WebElement searchParagraph = driver.findElement(By.name("q"));
+        Assert.assertTrue(searchParagraph.isDisplayed());
     }
 
      /*
