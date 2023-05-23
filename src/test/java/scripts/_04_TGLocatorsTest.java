@@ -78,7 +78,8 @@ public class _04_TGLocatorsTest extends Base {
     @Test
     public void validateListHeaders() {
         List<WebElement> headers = driver.findElements((By.cssSelector(".Xpath_subheader__VOtsU")));
-        //        List<WebElement> headers = driver.findElements((By.tagName("h3")));
+        // List<WebElement> headers = driver.findElements((By.tagName("h3")));
+        // List<WebElement> headers = driver.findElements((By.xpath("//h3")));
         String[] expectedHeaders = {"Programming Languages", "Automation Tools"};
         for (int i = 0; i < headers.size(); i++) {
             Assert.assertTrue(headers.get(i).isDisplayed());
