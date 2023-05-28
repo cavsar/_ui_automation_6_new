@@ -86,4 +86,8 @@ public class _12_TGAlertsTest extends Base {
      * Click on the "OK" button on the alert
      * Validate the result message equals "You entered "Hello" in the alert and clicked OK."
      */
+    @Test
+    public void promptAlert(){
+
+    }
 }
