@@ -56,8 +56,8 @@ public class _01_Project1 extends Base {
         Assert.assertTrue(fullNameInputBox.isDisplayed());
         WebElement fullNameLAbel = driver.findElement(By.cssSelector("label[for='name']"));
         Assert.assertEquals(fullNameLAbel.getText(), "Full name *");
-        WebElement placeholderFullName = driver.findElement(By.cssSelector("input[placeholder*='Enter your full name']"));
-        Assert.assertEquals(placeholderFullName.getAttribute("placeholder"), "Enter your name");
+        WebElement placeholderFullName = driver.findElement(By.cssSelector("input[placeholder*='full name']"));
+        Assert.assertEquals(placeholderFullName.getAttribute("placeholder"), "Enter your full name");
 
     }
 
@@ -132,7 +132,47 @@ public class _01_Project1 extends Base {
         Assert.assertEquals(emailPlaceholder.getAttribute("placeholder"),"Enter your email");
     }
 
+    /**
+     * Navigate to https://techglobal-training.com/frontend/project-1
+     * Validate that the Phone input box is displayed
+     * Validate that the Phone input box is not required
+     * Validate that the label of the Phone input box is “Phone”
+     * Validate that the placeholder of the Address input box is “Enter your phone number”
+     */
+    @Test
+    public void validatePhone(){
+        WebElement phone = driver.findElement(By.cssSelector("input[type*='phone']"));
+        Assert.assertTrue(phone.isDisplayed());
+        WebElement phoneLabel = driver.findElement(By.xpath("//input[contains (@type, 'phone')]/../../label"));
+        Assert.assertEquals(phoneLabel.getText() ,"Phone");
+        WebElement phonePlaceholder = driver.findElement(By.cssSelector("input[type*='phone']"));
+        Assert.assertEquals(phonePlaceholder.getAttribute("placeholder"),"Enter your phone number");
+    }
+    /**
+     * Navigate to https://techglobal-training.com/frontend/project-1
+     * Validate that the Message text area is displayed
+     * Validate that the Message text area is not required
+     * Validate that the label of the Message text area is “Message”
+     * Validate that the placeholder of the Message text area is “Type your message here…”
+     */
+@Test
+    public void validateMessage(){
+    WebElement message = driver.findElement(By.cssSelector(".textarea"));
+    Assert.assertTrue(message.isDisplayed());
+    WebElement messageLabel = driver.findElement(By.xpath("//textarea[@class]/../../label"));
+    Assert.assertEquals(messageLabel.getText() ,"Message");
+    WebElement messagePlaceholder = driver.findElement(By.xpath("//textarea[@class]"));
+    Assert.assertEquals(messagePlaceholder.getAttribute("placeholder"),"Type your message here...");
 
+}
+/**
+ * Navigate to https://techglobal-training.com/frontend/project-1
+ * Validate the label is “I give my consent to be contacted.”
+ * Validate that the Consent checkbox is required
+ * Validate that the Consent checkbox is clickable
+ * Click on the “I give my consent to be contacted.” checkbox and validate it is selected
+ * Click on the “I give my consent to be contacted.” checkbox again and validate it is not selected
+ */
 }
 
 
