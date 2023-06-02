@@ -1,5 +1,6 @@
 package scripts;
 
+import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -60,7 +61,7 @@ public class _01_Project1 extends Base {
         WebElement fullNameLAbel = driver.findElement(By.cssSelector("label[for='name']"));
         Assert.assertEquals(fullNameLAbel.getText(), "Full name *");
         WebElement placeholderFullName = driver.findElement(By.cssSelector("input[placeholder*='full name']"));
-        Assert.assertEquals(placeholderFullName.getAttribute("placeholder"), "Enter your  name");
+        Assert.assertEquals(placeholderFullName.getAttribute("placeholder"), "Enter your full name");
 
     }
 
@@ -76,7 +77,7 @@ public class _01_Project1 extends Base {
         Click on the “Female” option and validate it is selected while the others are not selected
          */
         WebElement labelGender = driver.findElement(By.cssSelector("div[class='control']>label[class='label']"));
-        Assert.assertEquals(labelGender.getText(), "Gender ");
+        Assert.assertEquals(labelGender.getText(), "Gender *");
         WebElement labelGender2 = driver.findElement(By.cssSelector(".radio>input"));
         Assert.assertEquals(labelGender2.getAttribute("required"), "true");
         List<WebElement> optionsLabel = driver.findElements(By.cssSelector(".control label.radio"));
@@ -136,7 +137,7 @@ public class _01_Project1 extends Base {
         Assert.assertTrue(email.isDisplayed());
         Assert.assertEquals(email.getAttribute("required"), "true");
         WebElement emailLabel = driver.findElement(By.xpath("//input[contains (@type, 'email')]/../../label"));
-        Assert.assertEquals(emailLabel.getText(), "Email ");
+        Assert.assertEquals(emailLabel.getText(), "Email *");
         WebElement emailPlaceholder = driver.findElement(By.cssSelector("input[type*='email']"));
         Assert.assertEquals(emailPlaceholder.getAttribute("placeholder"), "Enter your email");
     }
@@ -226,33 +227,34 @@ public class _01_Project1 extends Base {
      * Click on the “SUBMIT” button
      * Validate the form message “Thanks for submitting!” is displayed under the “SUBMIT” button
      */
-    @Test
-    public void validateEnter() {
-        WebElement fullNameInputBox = driver.findElement(By.cssSelector("input[placeholder='Enter your full name']"));
-        fullNameInputBox.sendKeys("Cihan");
-        List<WebElement> optionsLabel = driver.findElements(By.cssSelector(".control label.radio"));
-        optionsLabel.get(1).click();
-        Waiter.pause(2);
-        WebElement addressLabel = driver.findElement(By.cssSelector("input[placeholder*='address']"));
-        addressLabel.sendKeys("Calgary");
-        Waiter.pause(2);
-        WebElement email = driver.findElement(By.cssSelector("input[placeholder*='email']"));
-        email.sendKeys("cavsar_18@hotmail.com");
-        Waiter.pause(2);
-        WebElement phone = driver.findElement(By.cssSelector("input[placeholder*='phone']"));
-        phone.sendKeys("123-345-2121");
-        WebElement message = driver.findElement(By.cssSelector(".textarea"));
-        message.sendKeys("Hello World");
+    @Test(priority = 10, description = "Test Case 10 - Validate the form submission")
+    public void validateTheFormSubmission(){
+        Faker faker = new Faker();
+
+        WebElement nameInputBox = driver.findElement(By.xpath("//label[@for='name']/..//input"));
+        List<WebElement> genders = driver.findElements(By.cssSelector(".mr-1"));
+        WebElement addressInputBox = driver.findElement(By.xpath("//label[text()='Address']/..//input"));
+        WebElement emailInputBox = driver.findElement(By.cssSelector("input[type='email']"));
+        WebElement phoneInputBox = driver.findElement(By.cssSelector("input[type='phone']"));
+        WebElement messageTextArea = driver.findElement(By.tagName("textarea"));
         WebElement consentCheckBox = driver.findElement(By.cssSelector("input[type='checkbox']"));
-        consentCheckBox.click();
         WebElement submitButton = driver.findElement(By.cssSelector(".is-link"));
+
+        nameInputBox.sendKeys(faker.name().fullName());
+        genders.get(0).click();
+        addressInputBox.sendKeys(faker.address().fullAddress());
+        emailInputBox.sendKeys("abcd@gmail.com");
+        phoneInputBox.sendKeys(faker.phoneNumber().cellPhone());
+        messageTextArea.sendKeys(faker.gameOfThrones().quote());
+        consentCheckBox.click();
         submitButton.click();
-        WebDriverWait wait = new WebDriverWait(driver, 5);
-        wait.until(ExpectedConditions.visibilityOf(submitButton));
-        WebElement formMessage = driver.findElement(By.cssSelector(".mt-5"));
-        Assert.assertEquals(formMessage.getText(), "Thanks for submitting!");
 
+        WebElement confirmationMessage = driver.findElement(By.cssSelector(".mt-5"));
 
+        Assert.assertTrue(confirmationMessage.isDisplayed());
+        Assert.assertEquals(confirmationMessage.getText(), "Thanks for submitting!");
+
+        Waiter.pause(30);
     }
 }
 
