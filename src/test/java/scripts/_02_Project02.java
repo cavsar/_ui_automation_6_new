@@ -1,11 +1,13 @@
 package scripts;
 
+import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utils.Waiter;
+import utils.WindowHandler;
 
 import static scripts._01_GoogleTest.driver;
 
@@ -141,5 +143,102 @@ public class _02_Project02 extends Base {
         Assert.assertTrue(modalHeading.isDisplayed());
         WebElement closeButton = driver.findElement(By.className("delete"));
         closeButton.click();
+        WindowHandler.switchToChildWindow();
+        Waiter.pause(1);
     }
+    /**
+     * Navigate to https://techglobal-training.com/frontend/project-2
+     * Click on the “Forgot Password?” link
+     * Enter an email
+     * Click on the “SUBMIT” button
+     * Validate the form message “A link to reset your password has been sent to your email address.” is displayed under the “SUBMIT” button
+     */
+    @Test
+    public void validateFormMessage(){
+        WebElement forgotPasswordLink = driver.findElement(By.linkText("Forgot Password?"));
+        forgotPasswordLink.click();
+        Faker faker =new Faker();
+        WebElement emailInputBox =driver.findElement(By.id("email"));
+        emailInputBox.sendKeys("abcd@gmail.com");
+        WebElement submitButton = driver.findElement(By.id("submit"));
+        submitButton.click();
+        WebElement confirmationMessage = driver.findElement(By.id("confirmation_message"));
+        Assert.assertEquals(confirmationMessage.getText(),"A link to reset your password has been sent to your email address.");
+    }
+    /**
+     * Navigate to https://techglobal-training.com/frontend/project-2
+     * Leave username empty
+     * Leave password empty
+     * Click on the “LOGIN” button
+     * Validate the failure message is displayed as “Invalid Username entered!” above the form
+     */
+    @Test
+    public void validateInvalidLoginWithEmptyCredentials(){
+        WebElement loginButton = driver.findElement(By.id("login_btn"));
+        loginButton.click();
+        WebElement errorMessage= driver.findElement(By.id("error_message"));
+        Assert.assertEquals(errorMessage.getText(),"Invalid Username entered!");
+    }
+    /**
+     * Navigate to https://techglobal-training.com/frontend/project-2
+     * Enter the username as “John”
+     * Enter the password as “Test1234”
+     * Click on the “LOGIN” button
+     * Validate the failure message is displayed as “Invalid Username entered!” above the form
+     */
+    @Test
+    public void validateInvalidLoginWithWrongUsername(){
+        WebElement usernameInputBox = driver.findElement(By.id("username"));
+        WebElement passwordInputBox = driver.findElement(By.id("password"));
+        usernameInputBox.sendKeys("John");
+        Waiter.pause(1);
+        passwordInputBox.sendKeys("Test1234");
+        Waiter.pause(1);
+        WebElement loginButton = driver.findElement(By.id("login_btn"));
+        loginButton.click();
+        WebElement errorMessage= driver.findElement(By.id("error_message"));
+        Assert.assertEquals(errorMessage.getText(),"Invalid Username entered!");
+    }
+    /**
+     * Navigate to https://techglobal-training.com/frontend/project-2
+     * Enter the username as “TechGlobal”
+     * Enter the password as “1234”
+     * Click on the “LOGIN” button
+     * Validate the failure message is displayed as “Invalid Password entered!” above the form
+     */
+    @Test
+    public void validateInvalidLoginWithWrongPassword(){
+        WebElement usernameInputBox = driver.findElement(By.id("username"));
+        WebElement passwordInputBox = driver.findElement(By.id("password"));
+        usernameInputBox.sendKeys("TechGlobal");
+        Waiter.pause(1);
+        passwordInputBox.sendKeys("1234");
+        Waiter.pause(1);
+        WebElement loginButton = driver.findElement(By.id("login_btn"));
+        loginButton.click();
+        WebElement errorMessage= driver.findElement(By.id("error_message"));
+        Assert.assertEquals(errorMessage.getText(),"Invalid Password entered!");
+    }
+    /**
+     * Navigate to https://techglobal-training.com/frontend/project-2
+     * Enter the username as “John”
+     * Enter the password as “1234”
+     * Click on the “LOGIN” button
+     * Validate the failure message is displayed as “Invalid Username entered!” above the form
+     */
+    @Test
+    public void validateInvalidLoginWithWrongPasswordAndUsername(){
+        WebElement usernameInputBox = driver.findElement(By.id("username"));
+        WebElement passwordInputBox = driver.findElement(By.id("password"));
+        usernameInputBox.sendKeys("John");
+        Waiter.pause(1);
+        passwordInputBox.sendKeys("1234");
+        Waiter.pause(1);
+        WebElement loginButton = driver.findElement(By.id("login_btn"));
+        loginButton.click();
+        WebElement errorMessage= driver.findElement(By.id("error_message"));
+        Assert.assertEquals(errorMessage.getText(),"Invalid Username entered!");
+    }
+
+
 }
