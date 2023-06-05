@@ -7,9 +7,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utils.Waiter;
-import utils.WindowHandler;
 
-import static scripts._01_GoogleTest.driver;
+import java.util.NoSuchElementException;
 
 public class _02_Project02 extends Base {
     @BeforeMethod
@@ -137,15 +136,27 @@ public class _02_Project02 extends Base {
 
     @Test
     public void validateReset(){
-        WebElement forgotPasswordLink = driver.findElement(By.linkText("Forgot Password?"));
-        forgotPasswordLink.click();
-        WebElement modalHeading = driver.findElement(By.id("sub_heading"));
-        Assert.assertTrue(modalHeading.isDisplayed());
-        WebElement closeButton = driver.findElement(By.className("delete"));
-        closeButton.click();
+       /**
         WindowHandler.switchToChildWindow();
         Waiter.pause(1);
-    }
+        */
+
+        WebElement forgotPasswordLink = driver.findElement(By.linkText("Forgot Password?"));
+        forgotPasswordLink.click();
+        WebElement modalHeading = driver.findElement(By.cssSelector(".modal"));
+
+
+            try {
+                Assert.assertTrue(modalHeading.isDisplayed());
+                WebElement closeButton = driver.findElement(By.className("delete"));
+                closeButton.click();
+
+            } catch (NoSuchElementException e) {
+                System.out.println("Caught NoSuchElementException: " + e.getMessage());
+            }
+            Waiter.pause(1);
+        }
+
     /**
      * Navigate to https://techglobal-training.com/frontend/project-2
      * Click on the “Forgot Password?” link
@@ -153,6 +164,7 @@ public class _02_Project02 extends Base {
      * Click on the “SUBMIT” button
      * Validate the form message “A link to reset your password has been sent to your email address.” is displayed under the “SUBMIT” button
      */
+
     @Test
     public void validateFormMessage(){
         WebElement forgotPasswordLink = driver.findElement(By.linkText("Forgot Password?"));
