@@ -69,8 +69,6 @@ public class _18_TGSortableTableTest extends Base {
     }
 
 
-
-
     /**
      * TEST CASE 3
      * Go to https://techglobal-training.com/frontend/
@@ -81,8 +79,8 @@ public class _18_TGSortableTableTest extends Base {
 
 
     @Test
-    public void validateAscByPrice(){
-        WebElement ascPrice = driver.findElement(By.id("price_desc"));
+    public void validateAscByPrice() {
+        WebElement ascPrice = driver.findElement(By.id("price_asc"));
         ascPrice.click();
         List<WebElement> quantityColumnElements = TableHandler.getTableColumn(3);
         List<Integer> quantityColumn = new ArrayList<>();
@@ -99,12 +97,30 @@ public class _18_TGSortableTableTest extends Base {
     }
 
 
+    /**
+     * TEST CASE 4
+     * Go to https://techglobal-training.com/frontend/
+     * Click on the "Sortable Tables" card
+     * Click on the Price Sort button to toggle descending order
+     * Verify that the Price column of the table is sorted in descending order
+     */
+    @Test
+    public void validateDescByPrice() {
+        WebElement descPrice = driver.findElement(By.id("price_desc"));
+        descPrice.click();
+        List<WebElement> quantityColumnElements = TableHandler.getTableColumn(3);
+        List<Integer> quantityColumn = new ArrayList<>();
+
+        for (WebElement element : quantityColumnElements) {
+            quantityColumn.add(Integer.parseInt(element.getText()));
+        }
+
+        Waiter.pause(2);
+
+        for (int i = 1; i < quantityColumn.size(); i++) {
+            Assert.assertFalse(quantityColumn.get(i) >= quantityColumn.get(i - 1));
+        }
+
+    }
 }
 
-/**
- * TEST CASE 4
- * Go to https://techglobal-training.com/frontend/
- * Click on the "Sortable Tables" card
- * Click on the Price Sort button to toggle descending order
- * Verify that the Price column of the table is sorted in descending order
- */

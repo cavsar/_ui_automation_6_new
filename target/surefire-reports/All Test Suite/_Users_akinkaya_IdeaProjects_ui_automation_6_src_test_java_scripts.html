@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>TestNG:  Command line test</title>
+<title>TestNG:  /Users/akinkaya/IdeaProjects/ui_automation_6/src/test/java/scripts</title>
 <link href="../testng.css" rel="stylesheet" type="text/css" />
 <link href="../my-testng.css" rel="stylesheet" type="text/css" />
 
@@ -53,13 +53,13 @@ function toggleAllBoxes() {
 
 </head>
 <body>
-<h2 align='center'>Command line test</h2><table border='1' align="center">
+<h2 align='center'>/Users/akinkaya/IdeaProjects/ui_automation_6/src/test/java/scripts</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>54/3/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>38/3/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Jun 04 13:03:54 MDT 2023</td>
+<td>Started on:</td><td>Mon Jun 05 18:50:05 MDT 2023</td>
 </tr>
-<tr><td>Total time:</td><td>409 seconds (409219 ms)</td>
+<tr><td>Total time:</td><td>273 seconds (273672 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,17 +75,27 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='scripts._18_TGSortableTableTest.validateAscByPrice()'><b>validateAscByPrice</b><br>Test class: scripts._18_TGSortableTableTest</td>
-<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
-	at scripts._18_TGSortableTableTest.validateAscByPrice(_18_TGSortableTableTest.java:97)
-	at java.util.ArrayList.forEach(ArrayList.java:1259)
-... Removed 41 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace326612927", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace326612927'><pre>java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:97)
-	at org.testng.Assert.failNotEquals(Assert.java:969)
-	at org.testng.Assert.assertTrue(Assert.java:43)
-	at org.testng.Assert.assertTrue(Assert.java:53)
-	at scripts._18_TGSortableTableTest.validateAscByPrice(_18_TGSortableTableTest.java:97)
+<td title='scripts._15_TGFileUpload.basicFileUpload()'><b>basicFileUpload</b><br>Test class: scripts._15_TGFileUpload</td>
+<td><div><pre>org.openqa.selenium.InvalidArgumentException: invalid argument: File not found : /Users/buraksimsek/IdeaProjects/ui_automation_6/hello.txt
+  (Session info: chrome=114.0.5735.90)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;LAPTOP-CF98PN2R&apos;, ip: &apos;192.168.1.70&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_361&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.90, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\CIHANA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50302}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bfeb6f7ed2fd4e5b953a2299474d354c
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
+	at scripts._15_TGFileUpload.basicFileUpload(_15_TGFileUpload.java:37)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -111,29 +121,70 @@ function toggleAllBoxes() {
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
 	at org.testng.TestNG.runSuites(TestNG.java:1039)
 	at org.testng.TestNG.run(TestNG.java:1007)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:281)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:121)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+</pre></div><a href='#' onClick='toggleBox("stack-trace579177505", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace579177505'><pre>org.openqa.selenium.InvalidArgumentException: invalid argument: File not found : /Users/buraksimsek/IdeaProjects/ui_automation_6/hello.txt
+  (Session info: chrome=114.0.5735.90)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;LAPTOP-CF98PN2R&apos;, ip: &apos;192.168.1.70&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_361&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.90, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\CIHANA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50302}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bfeb6f7ed2fd4e5b953a2299474d354c
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
+	at scripts._15_TGFileUpload.basicFileUpload(_15_TGFileUpload.java:37)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:281)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:121)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
 </pre></div></td>
-<td>2</td>
-<td>scripts._18_TGSortableTableTest@6d7b4f4c</td></tr>
+<td>0</td>
+<td>scripts._15_TGFileUpload@78c03f1f</td></tr>
 <tr>
 <td title='scripts._05_FacebookTest.validateFacebookInvalidLoginAttempt()'><b>validateFacebookInvalidLoginAttempt</b><br>Test class: scripts._05_FacebookTest</td>
 <td><div><pre>java.lang.AssertionError: expected [The email you entered isn&apos;t connected to an account. Find your account and log in.] but found [The email you entered isn’t connected to an account. Find your account and log in.]
-	at scripts._05_FacebookTest.validateFacebookInvalidLoginAttempt(_05_FacebookTest.java:93)
-	at java.util.ArrayList.forEach(ArrayList.java:1259)
-... Removed 42 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace421639228", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace421639228'><pre>java.lang.AssertionError: expected [The email you entered isn&apos;t connected to an account. Find your account and log in.] but found [The email you entered isn’t connected to an account. Find your account and log in.]
 	at org.testng.Assert.fail(Assert.java:97)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:136)
 	at org.testng.Assert.assertEquals(Assert.java:118)
@@ -165,22 +216,54 @@ function toggleAllBoxes() {
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
 	at org.testng.TestNG.runSuites(TestNG.java:1039)
 	at org.testng.TestNG.run(TestNG.java:1007)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:281)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:121)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1461249916", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1461249916'><pre>java.lang.AssertionError: expected [The email you entered isn&apos;t connected to an account. Find your account and log in.] but found [The email you entered isn’t connected to an account. Find your account and log in.]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+	at org.testng.Assert.assertEquals(Assert.java:118)
+	at org.testng.Assert.assertEquals(Assert.java:575)
+	at org.testng.Assert.assertEquals(Assert.java:585)
+	at scripts._05_FacebookTest.validateFacebookInvalidLoginAttempt(_05_FacebookTest.java:93)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:281)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:121)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
 </pre></div></td>
-<td>1</td>
-<td>scripts._05_FacebookTest@4fe3c938</td></tr>
+<td>0</td>
+<td>scripts._05_FacebookTest@544fe44c</td></tr>
 <tr>
 <td title='scripts._08_TGWaitsTest.waitForBlueBox()'><b>waitForBlueBox</b><br>Test class: scripts._08_TGWaitsTest</td>
 <td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;button[class*=&apos;blue_box&apos;]&quot;}
@@ -189,30 +272,8 @@ For documentation on this error, please visit: https://www.seleniumhq.org/except
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;LAPTOP-CF98PN2R&apos;, ip: &apos;192.168.1.70&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_361&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.90, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\CIHANA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50102}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 7b52d8e65587b6563bd377860022efc2
-*** Element info: {Using=css selector, value=button[class*=&apos;blue_box&apos;]}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
-	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at scripts._08_TGWaitsTest.waitForBlueBox(_08_TGWaitsTest.java:43)
-	at java.util.ArrayList.forEach(ArrayList.java:1259)
-... Removed 41 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace422635759", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace422635759'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;button[class*=&apos;blue_box&apos;]&quot;}
-  (Session info: chrome=114.0.5735.90)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;LAPTOP-CF98PN2R&apos;, ip: &apos;192.168.1.70&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_361&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.90, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\CIHANA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50102}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 7b52d8e65587b6563bd377860022efc2
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.90, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\CIHANA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:65525}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8aa85994d413dd93d8a3b5087db24350
 *** Element info: {Using=css selector, value=button[class*=&apos;blue_box&apos;]}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
@@ -254,22 +315,71 @@ Session ID: 7b52d8e65587b6563bd377860022efc2
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
 	at org.testng.TestNG.runSuites(TestNG.java:1039)
 	at org.testng.TestNG.run(TestNG.java:1007)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:281)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:121)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1267523139", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1267523139'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;button[class*=&apos;blue_box&apos;]&quot;}
+  (Session info: chrome=114.0.5735.90)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;LAPTOP-CF98PN2R&apos;, ip: &apos;192.168.1.70&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_361&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.90, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\CIHANA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:65525}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8aa85994d413dd93d8a3b5087db24350
+*** Element info: {Using=css selector, value=button[class*=&apos;blue_box&apos;]}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
+	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at scripts._08_TGWaitsTest.waitForBlueBox(_08_TGWaitsTest.java:43)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:281)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:121)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
 </pre></div></td>
 <td>30</td>
-<td>scripts._08_TGWaitsTest@71423665</td></tr>
+<td>scripts._08_TGWaitsTest@21213b92</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -282,272 +392,192 @@ Session ID: 7b52d8e65587b6563bd377860022efc2
 <td title='scripts._09_TGCheckboxTest.checkboxTest()'><b>checkboxTest</b><br>Test class: scripts._09_TGCheckboxTest</td>
 <td></td>
 <td>0</td>
-<td>scripts._09_TGCheckboxTest@20398b7c</td></tr>
+<td>scripts._09_TGCheckboxTest@a67c67e</td></tr>
 <tr>
 <td title='scripts._09_TGCheckboxTest.checkboxTest2()'><b>checkboxTest2</b><br>Test class: scripts._09_TGCheckboxTest</td>
 <td></td>
 <td>0</td>
-<td>scripts._09_TGCheckboxTest@20398b7c</td></tr>
+<td>scripts._09_TGCheckboxTest@a67c67e</td></tr>
 <tr>
 <td title='scripts._12_TGAlertsTest.confirmationAlert()'><b>confirmationAlert</b><br>Test class: scripts._12_TGAlertsTest</td>
 <td></td>
 <td>0</td>
-<td>scripts._12_TGAlertsTest@3632be31</td></tr>
+<td>scripts._12_TGAlertsTest@66480dd7</td></tr>
 <tr>
 <td title='scripts._11_TGDropdownsTest.dropdownTestCase()'><b>dropdownTestCase</b><br>Test class: scripts._11_TGDropdownsTest</td>
 <td></td>
 <td>0</td>
-<td>scripts._11_TGDropdownsTest@56235b8e</td></tr>
+<td>scripts._11_TGDropdownsTest@4e1d422d</td></tr>
 <tr>
 <td title='scripts._11_TGDropdownsTest.productColorTest()'><b>productColorTest</b><br>Test class: scripts._11_TGDropdownsTest</td>
 <td></td>
 <td>0</td>
-<td>scripts._11_TGDropdownsTest@56235b8e</td></tr>
+<td>scripts._11_TGDropdownsTest@4e1d422d</td></tr>
 <tr>
 <td title='scripts._11_TGDropdownsTest.productDeliveryTest()'><b>productDeliveryTest</b><br>Test class: scripts._11_TGDropdownsTest</td>
 <td></td>
 <td>30</td>
-<td>scripts._11_TGDropdownsTest@56235b8e</td></tr>
+<td>scripts._11_TGDropdownsTest@4e1d422d</td></tr>
 <tr>
 <td title='scripts._11_TGDropdownsTest.productDropdownTest()'><b>productDropdownTest</b><br>Test class: scripts._11_TGDropdownsTest</td>
 <td></td>
 <td>0</td>
-<td>scripts._11_TGDropdownsTest@56235b8e</td></tr>
+<td>scripts._11_TGDropdownsTest@4e1d422d</td></tr>
 <tr>
 <td title='scripts._10_TGRadioButtonsTest.radioButtonsTest()'><b>radioButtonsTest</b><br>Test class: scripts._10_TGRadioButtonsTest</td>
 <td></td>
 <td>0</td>
-<td>scripts._10_TGRadioButtonsTest@6fc6f14e</td></tr>
-<tr>
-<td title='scripts._01_ProjectTest.validateAddress()'><b>validateAddress</b><br>Test class: scripts._01_ProjectTest</td>
-<td></td>
-<td>0</td>
-<td>scripts._01_ProjectTest@52a86356</td></tr>
+<td>scripts._10_TGRadioButtonsTest@3327bd23</td></tr>
 <tr>
 <td title='scripts._03_TGLocatorsTest.validateAllLinks()'><b>validateAllLinks</b><br>Test class: scripts._03_TGLocatorsTest</td>
 <td></td>
 <td>0</td>
-<td>scripts._03_TGLocatorsTest@78c03f1f</td></tr>
-<tr>
-<td title='scripts._03_TGLocatorsTest.validateAllParagraphs()'><b>validateAllParagraphs</b><br>Test class: scripts._03_TGLocatorsTest</td>
-<td></td>
-<td>0</td>
-<td>scripts._03_TGLocatorsTest@78c03f1f</td></tr>
+<td>scripts._03_TGLocatorsTest@3c0f93f1</td></tr>
 <tr>
 <td title='scripts._04_TGLocatorsTest.validateAutomationTools()'><b>validateAutomationTools</b><br>Test class: scripts._04_TGLocatorsTest</td>
 <td></td>
 <td>0</td>
-<td>scripts._04_TGLocatorsTest@5ec0a365</td></tr>
-<tr>
-<td title='scripts._01_ProjectTest.validateConsentCheckBox()'><b>validateConsentCheckBox</b><br>Test class: scripts._01_ProjectTest</td>
-<td></td>
-<td>0</td>
-<td>scripts._01_ProjectTest@52a86356</td></tr>
-<tr>
-<td title='scripts._01_ProjectTest.validateContactUsInfo()'><b>validateContactUsInfo</b><br>Test class: scripts._01_ProjectTest</td>
-<td></td>
-<td>0</td>
-<td>scripts._01_ProjectTest@52a86356</td></tr>
-<tr>
-<td title='scripts._07_TGDynamicElementsTest.validateDynamicElementBothBoxes()'><b>validateDynamicElementBothBoxes</b><br>Test class: scripts._07_TGDynamicElementsTest</td>
-<td></td>
-<td>0</td>
-<td>scripts._07_TGDynamicElementsTest@2ac273d3</td></tr>
+<td>scripts._04_TGLocatorsTest@31dc339b</td></tr>
 <tr>
 <td title='scripts._07_TGDynamicElementsTest.validateDynamicElementBox1()'><b>validateDynamicElementBox1</b><br>Test class: scripts._07_TGDynamicElementsTest</td>
 <td></td>
 <td>0</td>
-<td>scripts._07_TGDynamicElementsTest@2ac273d3</td></tr>
+<td>scripts._07_TGDynamicElementsTest@71318ec4</td></tr>
 <tr>
 <td title='scripts._07_TGDynamicElementsTest.validateDynamicElementBox2()'><b>validateDynamicElementBox2</b><br>Test class: scripts._07_TGDynamicElementsTest</td>
 <td></td>
 <td>0</td>
-<td>scripts._07_TGDynamicElementsTest@2ac273d3</td></tr>
+<td>scripts._07_TGDynamicElementsTest@71318ec4</td></tr>
 <tr>
 <td title='scripts._17_TGStaticTableTest.validateEachCell()'><b>validateEachCell</b><br>Test class: scripts._17_TGStaticTableTest</td>
 <td></td>
 <td>0</td>
-<td>scripts._17_TGStaticTableTest@4e9ba398</td></tr>
-<tr>
-<td title='scripts._01_ProjectTest.validateEmail()'><b>validateEmail</b><br>Test class: scripts._01_ProjectTest</td>
-<td></td>
-<td>0</td>
-<td>scripts._01_ProjectTest@52a86356</td></tr>
-<tr>
-<td title='scripts._05_FacebookTest.validateFacebookLoginForm()'><b>validateFacebookLoginForm</b><br>Test class: scripts._05_FacebookTest</td>
-<td></td>
-<td>0</td>
-<td>scripts._05_FacebookTest@4fe3c938</td></tr>
+<td>scripts._17_TGStaticTableTest@5ec0a365</td></tr>
 <tr>
 <td title='scripts._17_TGStaticTableTest.validateFirstRow()'><b>validateFirstRow</b><br>Test class: scripts._17_TGStaticTableTest</td>
 <td></td>
 <td>0</td>
-<td>scripts._17_TGStaticTableTest@4e9ba398</td></tr>
-<tr>
-<td title='scripts._01_ProjectTest.validateFullNameInputBox()'><b>validateFullNameInputBox</b><br>Test class: scripts._01_ProjectTest</td>
-<td></td>
-<td>0</td>
-<td>scripts._01_ProjectTest@52a86356</td></tr>
-<tr>
-<td title='scripts._01_ProjectTest.validateGenderRadioButton()'><b>validateGenderRadioButton</b><br>Test class: scripts._01_ProjectTest</td>
-<td></td>
-<td>8</td>
-<td>scripts._01_ProjectTest@52a86356</td></tr>
+<td>scripts._17_TGStaticTableTest@5ec0a365</td></tr>
 <tr>
 <td title='scripts._03_TGLocatorsTest.validateGrapesParagraph()'><b>validateGrapesParagraph</b><br>Test class: scripts._03_TGLocatorsTest</td>
 <td></td>
 <td>0</td>
-<td>scripts._03_TGLocatorsTest@78c03f1f</td></tr>
+<td>scripts._03_TGLocatorsTest@3c0f93f1</td></tr>
 <tr>
 <td title='scripts._03_TGLocatorsTest.validateKiwiParagraph()'><b>validateKiwiParagraph</b><br>Test class: scripts._03_TGLocatorsTest</td>
 <td></td>
 <td>0</td>
-<td>scripts._03_TGLocatorsTest@78c03f1f</td></tr>
+<td>scripts._03_TGLocatorsTest@3c0f93f1</td></tr>
 <tr>
 <td title='scripts._04_TGLocatorsTest.validateLanguages()'><b>validateLanguages</b><br>Test class: scripts._04_TGLocatorsTest</td>
 <td></td>
 <td>0</td>
-<td>scripts._04_TGLocatorsTest@5ec0a365</td></tr>
+<td>scripts._04_TGLocatorsTest@31dc339b</td></tr>
 <tr>
 <td title='scripts._17_TGStaticTableTest.validateLastColumn()'><b>validateLastColumn</b><br>Test class: scripts._17_TGStaticTableTest</td>
 <td></td>
 <td>0</td>
-<td>scripts._17_TGStaticTableTest@4e9ba398</td></tr>
+<td>scripts._17_TGStaticTableTest@5ec0a365</td></tr>
 <tr>
 <td title='scripts._04_TGLocatorsTest.validateListHeaders()'><b>validateListHeaders</b><br>Test class: scripts._04_TGLocatorsTest</td>
 <td></td>
 <td>0</td>
-<td>scripts._04_TGLocatorsTest@5ec0a365</td></tr>
-<tr>
-<td title='scripts._01_ProjectTest.validateMessage()'><b>validateMessage</b><br>Test class: scripts._01_ProjectTest</td>
-<td></td>
-<td>0</td>
-<td>scripts._01_ProjectTest@52a86356</td></tr>
+<td>scripts._04_TGLocatorsTest@31dc339b</td></tr>
 <tr>
 <td title='scripts._01_GoogleTest.validateNavigation()'><b>validateNavigation</b><br>Test class: scripts._01_GoogleTest</td>
 <td></td>
-<td>11</td>
-<td>scripts._01_GoogleTest@66480dd7</td></tr>
+<td>10</td>
+<td>scripts._01_GoogleTest@1e127982</td></tr>
 <tr>
 <td title='scripts._03_TGLocatorsTest.validateOrangeParagraph()'><b>validateOrangeParagraph</b><br>Test class: scripts._03_TGLocatorsTest</td>
 <td></td>
 <td>0</td>
-<td>scripts._03_TGLocatorsTest@78c03f1f</td></tr>
-<tr>
-<td title='scripts._01_ProjectTest.validatePhone()'><b>validatePhone</b><br>Test class: scripts._01_ProjectTest</td>
-<td></td>
-<td>0</td>
-<td>scripts._01_ProjectTest@52a86356</td></tr>
+<td>scripts._03_TGLocatorsTest@3c0f93f1</td></tr>
 <tr>
 <td title='scripts._10_TGRadioButtonsTest.validatePracticeMore()'><b>validatePracticeMore</b><br>Test class: scripts._10_TGRadioButtonsTest</td>
 <td></td>
 <td>0</td>
-<td>scripts._10_TGRadioButtonsTest@6fc6f14e</td></tr>
+<td>scripts._10_TGRadioButtonsTest@3327bd23</td></tr>
 <tr>
 <td title='scripts._03_TGLocatorsTest.validateRedAppleLink()'><b>validateRedAppleLink</b><br>Test class: scripts._03_TGLocatorsTest</td>
 <td></td>
 <td>0</td>
-<td>scripts._03_TGLocatorsTest@78c03f1f</td></tr>
-<tr>
-<td title='scripts._08_TGWaitsTest.validateRedBox()'><b>validateRedBox</b><br>Test class: scripts._08_TGWaitsTest</td>
-<td></td>
-<td>10</td>
-<td>scripts._08_TGWaitsTest@71423665</td></tr>
-<tr>
-<td title='scripts._01_GoogleTest.validateSearchBar()'><b>validateSearchBar</b><br>Test class: scripts._01_GoogleTest</td>
-<td></td>
-<td>0</td>
-<td>scripts._01_GoogleTest@66480dd7</td></tr>
+<td>scripts._03_TGLocatorsTest@3c0f93f1</td></tr>
 <tr>
 <td title='scripts._01_GoogleTest.validateSearchButton()'><b>validateSearchButton</b><br>Test class: scripts._01_GoogleTest</td>
 <td></td>
 <td>0</td>
-<td>scripts._01_GoogleTest@66480dd7</td></tr>
+<td>scripts._01_GoogleTest@1e127982</td></tr>
 <tr>
 <td title='scripts._18_TGSortableTableTest.validateSortAscByQuantity()'><b>validateSortAscByQuantity</b><br>Test class: scripts._18_TGSortableTableTest</td>
 <td></td>
 <td>2</td>
-<td>scripts._18_TGSortableTableTest@6d7b4f4c</td></tr>
-<tr>
-<td title='scripts._18_TGSortableTableTest.validateSortDescByQuantity()'><b>validateSortDescByQuantity</b><br>Test class: scripts._18_TGSortableTableTest</td>
-<td></td>
-<td>2</td>
-<td>scripts._18_TGSortableTableTest@6d7b4f4c</td></tr>
+<td>scripts._18_TGSortableTableTest@4fe3c938</td></tr>
 <tr>
 <td title='scripts._17_TGStaticTableTest.validateTableHeader()'><b>validateTableHeader</b><br>Test class: scripts._17_TGStaticTableTest</td>
 <td></td>
 <td>0</td>
-<td>scripts._17_TGStaticTableTest@4e9ba398</td></tr>
+<td>scripts._17_TGStaticTableTest@5ec0a365</td></tr>
 <tr>
 <td title='scripts._14_MultipleWindowsTest.validateTheAppleNavigation()'><b>validateTheAppleNavigation</b><br>Test class: scripts._14_MultipleWindowsTest<br>Test method: TC123: Validate the IFrame Page content paragraph</td>
 <td></td>
-<td>2</td>
-<td>scripts._14_MultipleWindowsTest@2286778</td></tr>
+<td>0</td>
+<td>scripts._14_MultipleWindowsTest@5ce81285</td></tr>
 <tr>
 <td title='scripts._01_ProjectTest.validateTheFormSubmission()'><b>validateTheFormSubmission</b><br>Test class: scripts._01_ProjectTest<br>Test method: Test Case 10 - Validate the form submission</td>
 <td></td>
 <td>31</td>
-<td>scripts._01_ProjectTest@52a86356</td></tr>
+<td>scripts._01_ProjectTest@60c6f5b</td></tr>
 <tr>
 <td title='scripts._13_IFrameTest.validateTheFormSubmission()'><b>validateTheFormSubmission</b><br>Test class: scripts._13_IFrameTest<br>Test method: TC345 Validate the form submission</td>
 <td></td>
-<td>1</td>
-<td>scripts._13_IFrameTest@5abca1e0</td></tr>
+<td>0</td>
+<td>scripts._13_IFrameTest@52a86356</td></tr>
 <tr>
 <td title='scripts._04_TGLocatorsTest.validateTheHeader()'><b>validateTheHeader</b><br>Test class: scripts._04_TGLocatorsTest</td>
 <td></td>
 <td>0</td>
-<td>scripts._04_TGLocatorsTest@5ec0a365</td></tr>
+<td>scripts._04_TGLocatorsTest@31dc339b</td></tr>
 <tr>
 <td title='scripts._14_MultipleWindowsTest.validateTheLinkURLs()'><b>validateTheLinkURLs</b><br>Test class: scripts._14_MultipleWindowsTest<br>Test method: Validate link URLs</td>
 <td></td>
 <td>12</td>
-<td>scripts._14_MultipleWindowsTest@2286778</td></tr>
+<td>scripts._14_MultipleWindowsTest@5ce81285</td></tr>
 <tr>
 <td title='scripts._14_MultipleWindowsTest.validateTheMicrosoftNavigation()'><b>validateTheMicrosoftNavigation</b><br>Test class: scripts._14_MultipleWindowsTest<br>Test method: TC345 Validate the form submission</td>
 <td></td>
-<td>2</td>
-<td>scripts._14_MultipleWindowsTest@2286778</td></tr>
+<td>1</td>
+<td>scripts._14_MultipleWindowsTest@5ce81285</td></tr>
 <tr>
 <td title='scripts._13_IFrameTest.validateTheParagraph()'><b>validateTheParagraph</b><br>Test class: scripts._13_IFrameTest<br>Test method: TC123: Validate the IFrame Page content paragraph</td>
 <td></td>
 <td>0</td>
-<td>scripts._13_IFrameTest@5abca1e0</td></tr>
+<td>scripts._13_IFrameTest@52a86356</td></tr>
 <tr>
 <td title='scripts._14_MultipleWindowsTest.validateTheTeslaNavigation()'><b>validateTheTeslaNavigation</b><br>Test class: scripts._14_MultipleWindowsTest<br>Test method: TC323 Validate the Tesla navigation</td>
 <td></td>
 <td>2</td>
-<td>scripts._14_MultipleWindowsTest@2286778</td></tr>
+<td>scripts._14_MultipleWindowsTest@5ce81285</td></tr>
 <tr>
 <td title='scripts._01_GoogleTest.validateTitleAndURL()'><b>validateTitleAndURL</b><br>Test class: scripts._01_GoogleTest</td>
 <td></td>
 <td>0</td>
-<td>scripts._01_GoogleTest@66480dd7</td></tr>
+<td>scripts._01_GoogleTest@1e127982</td></tr>
 <tr>
 <td title='scripts._02_AppleTest.validateTitleAndURL()'><b>validateTitleAndURL</b><br>Test class: scripts._02_AppleTest</td>
 <td></td>
 <td>0</td>
-<td>scripts._02_AppleTest@5ce81285</td></tr>
-<tr>
-<td title='scripts._06_WikiTest.validateWikiSearch1()'><b>validateWikiSearch1</b><br>Test class: scripts._06_WikiTest</td>
-<td></td>
-<td>1</td>
-<td>scripts._06_WikiTest@5383967b</td></tr>
+<td>scripts._02_AppleTest@2038ae61</td></tr>
 <tr>
 <td title='scripts._06_WikiTest.validateWikiSearch2()'><b>validateWikiSearch2</b><br>Test class: scripts._06_WikiTest</td>
 <td></td>
 <td>1</td>
-<td>scripts._06_WikiTest@5383967b</td></tr>
-<tr>
-<td title='scripts._01_ProjectTest.validatesubmission()'><b>validatesubmission</b><br>Test class: scripts._01_ProjectTest</td>
-<td></td>
-<td>0</td>
-<td>scripts._01_ProjectTest@52a86356</td></tr>
+<td>scripts._06_WikiTest@31610302</td></tr>
 <tr>
 <td title='scripts._12_TGAlertsTest.warningAlert()'><b>warningAlert</b><br>Test class: scripts._12_TGAlertsTest</td>
 <td></td>
 <td>0</td>
-<td>scripts._12_TGAlertsTest@3632be31</td></tr>
+<td>scripts._12_TGAlertsTest@66480dd7</td></tr>
 </table><p>
 </body>
 </html>
