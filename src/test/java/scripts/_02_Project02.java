@@ -2,6 +2,7 @@ package scripts;
 
 import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -144,15 +145,15 @@ public class _02_Project02 extends Base {
         WebElement forgotPasswordLink = driver.findElement(By.linkText("Forgot Password?"));
         forgotPasswordLink.click();
         WebElement modalHeading = driver.findElement(By.cssSelector(".modal"));
-
+        WebElement closeButton = driver.findElement(By.className("delete"));
+        closeButton.click();
 
             try {
-                Assert.assertTrue(modalHeading.isDisplayed());
-                WebElement closeButton = driver.findElement(By.className("delete"));
-                closeButton.click();
+                Assert.assertFalse(modalHeading.isDisplayed());
 
-            } catch (NoSuchElementException e) {
-                System.out.println("Caught NoSuchElementException: " + e.getMessage());
+
+            } catch (StaleElementReferenceException e) {
+               Assert.assertTrue(true);
             }
             Waiter.pause(1);
         }
