@@ -1,4 +1,5 @@
 package scripts;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterMethod;
@@ -8,14 +9,15 @@ import utils.Driver;
 public class Base {
 
     public static WebDriver driver; // declaration
-Actions actions;
+    Actions actions;
+
     @BeforeMethod
-    public void setUp(){
+    public void setUp() {
         driver = Driver.getDriver();
     }
 
     @AfterMethod
-    public void tearDown(){
+    public void tearDown() {
         Driver.quitDriver();
     }
 }

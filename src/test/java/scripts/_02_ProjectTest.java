@@ -9,9 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utils.Waiter;
 
-import java.util.NoSuchElementException;
-
-public class _02_Project02 extends Base {
+public class _02_ProjectTest extends Base {
     @BeforeMethod
     public void setPage() {
         driver.get("https://techglobal-training.com/frontend/project-2");
