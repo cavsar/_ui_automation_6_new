@@ -1,255 +1,155 @@
 package scripts;
 
-import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import utils.Waiter;
+import pages.Project2Page;
 
 public class _02_ProjectTest extends Base {
+
     @BeforeMethod
-    public void setPage() {
+    public void setPage(){
         driver.get("https://techglobal-training.com/frontend/project-2");
+        project2Page = new Project2Page();
     }
 
-    /**
-     * Navigate to https://techglobal-training.com/frontend/project-2
-     * Validate that the username input box is displayed
-     * Validate that the username input box is not required
-     * Validate that the label of the username input box is “Please enter your username”
-     * Validate that the password input box is displayed
-     * Validate that the password input box is not required
-     * Validate that the label of the password input box is “Please enter your password”
-     * Validate the “LOGIN” button is displayed
-     * Validate the “LOGIN” button is clickable
-     * Validate that the button text is “LOGIN”
-     * Validate the “Forgot Password?” link is displayed
-     * Validate that the “Forgot Password?” link is clickable
-     * Validate that the link text is “Forgot Password?”
-     */
-    @Test
-    public void validateLoginForm() {
-        WebElement usernameInputBox = driver.findElement(By.id("username"));
-        WebElement usernameLabel = driver.findElement(By.xpath("//input[@id='username']/../label"));
-        WebElement passwordInputBox = driver.findElement(By.id("password"));
-        WebElement passwordLabel = driver.findElement(By.xpath("//input[@id='password']/../label"));
-        WebElement loginButton = driver.findElement(By.id("login_btn"));
-        WebElement forgotPasswordLink = driver.findElement(By.linkText("Forgot Password?"));
-        Assert.assertTrue(usernameInputBox.isDisplayed());
-        Assert.assertFalse(Boolean.parseBoolean(usernameInputBox.getAttribute("required")));
-        Assert.assertEquals(usernameLabel.getText(), "Please enter your username");
-        Assert.assertTrue(passwordInputBox.isDisplayed());
-        Assert.assertFalse(Boolean.parseBoolean(passwordInputBox.getAttribute("required")));
-        Assert.assertEquals(passwordLabel.getText(), "Please enter your password");
-        Assert.assertTrue(loginButton.isDisplayed());
-        Assert.assertTrue(loginButton.isEnabled());
-        Assert.assertTrue(forgotPasswordLink.isDisplayed());
-        Assert.assertTrue(forgotPasswordLink.isEnabled());
-        Assert.assertEquals(forgotPasswordLink.getText(), "Forgot Password?");
+    @Test(priority = 1, description = "Test Case 01 - Validate the login form")
+    public void validateTheLoginForm(){
+        Assert.assertTrue(project2Page.usernameInputBox.isDisplayed());
+        Assert.assertTrue(project2Page.usernameInputBox.isEnabled());
+        Assert.assertNotEquals(project2Page.usernameInputBox.getAttribute("required"), "true");
+        Assert.assertTrue(project2Page.usernameInputBoxLabel.isDisplayed());
+        Assert.assertEquals(project2Page.usernameInputBoxLabel.getText(), "Please enter your username");
+
+        Assert.assertTrue(project2Page.passwordInputBox.isDisplayed());
+        Assert.assertTrue(project2Page.passwordInputBox.isEnabled());
+        Assert.assertNotEquals(project2Page.passwordInputBox.getAttribute("required"), "true");
+        Assert.assertTrue(project2Page.passwordInputBoxLabel.isDisplayed());
+        Assert.assertEquals(project2Page.passwordInputBoxLabel.getText(), "Please enter your password");
+
+        Assert.assertTrue(project2Page.loginButton.isDisplayed());
+        Assert.assertTrue(project2Page.loginButton.isEnabled());
+        Assert.assertEquals(project2Page.loginButton.getText(), "LOGIN");
+
+        Assert.assertTrue(project2Page.forgotPasswordLink.isDisplayed());
+        Assert.assertTrue(project2Page.forgotPasswordLink.isEnabled());
+        Assert.assertEquals(project2Page.forgotPasswordLink.getText(), "Forgot Password?");
     }
 
-    /**
-     * Navigate to https://techglobal-training.com/frontend/project-2
-     * Enter the username as “TechGlobal”
-     * Enter the password as “Test1234”
-     * Click on the “LOGIN” button
-     * Validate the success message is displayed as “You are logged in”
-     * Validate the logout button displayed with the text “LOGOUT”
-     */
-    @Test
-    public void validateValidLogin(){
-        WebElement usernameInputBox = driver.findElement(By.id("username"));
-        WebElement passwordInputBox = driver.findElement(By.id("password"));
-        usernameInputBox.sendKeys("TechGlobal");
-        passwordInputBox.sendKeys("Test1234");
-        WebElement loginButton = driver.findElement(By.id("login_btn"));
-        loginButton.click();
-        WebElement successLoginMessage= driver.findElement(By.id("success_lgn"));
-        Assert.assertTrue(successLoginMessage.isDisplayed());
-        WebElement logoutButton = driver.findElement(By.id("logout"));
-        Assert.assertTrue(logoutButton.isDisplayed());
+    @Test(priority = 2, description = "Test Case 02 - Validate the valid login")
+    public void validateTheValidLogin(){
+        project2Page.login("TechGlobal", "Test1234");
 
+        Assert.assertTrue(project2Page.successfulLoginMessage.isDisplayed());
+        Assert.assertEquals(project2Page.successfulLoginMessage.getText(), "You are logged in");
+
+        Assert.assertTrue(project2Page.logoutButton.isDisplayed());
+        Assert.assertTrue(project2Page.logoutButton.isEnabled());
+        Assert.assertEquals(project2Page.logoutButton.getText(), "LOGOUT");
     }
 
-    /**
-     * Navigate to https://techglobal-training.com/frontend/project-2
-     * Enter the username as “TechGlobal”
-     * Enter the password as “Test1234”
-     * Click on the “LOGIN” button
-     * Click on the “LOGOUT” button
-     * Validate that the login form is displayed
-     */
-    @Test
-    public void validateLogout(){
-        WebElement usernameInputBox = driver.findElement(By.id("username"));
-        WebElement passwordInputBox = driver.findElement(By.id("password"));
-        usernameInputBox.sendKeys("TechGlobal");
-        Waiter.pause(1);
-        passwordInputBox.sendKeys("Test1234");
-        Waiter.pause(1);
-        WebElement loginButton = driver.findElement(By.id("login_btn"));
-        loginButton.click();
-        WebElement logoutButton = driver.findElement(By.id("logout"));
-        logoutButton.click();
-        WebElement loginForm =driver.findElement(By.className("pt-6"));
-        Assert.assertTrue(loginForm.isDisplayed());
+    @Test(priority = 3, description = "Test Case 03 - Validate the logout")
+    public void validateTheLogOut(){
+        project2Page.login("TechGlobal", "Test1234");
+        project2Page.logoutButton.click();
+        Assert.assertTrue(project2Page.loginForm.isDisplayed());
     }
-    /**
-     * Navigate to https://techglobal-training.com/frontend/project-2
-     * Click on the “Forgot Password?” link
-     * Validate that the modal heading “Reset Password” is displayed
-     * Validate that the close button is displayed
-     * Validate that the email input box is displayed
-     * Validate that the label of the email input box is “Enter your email address and we'll send you a link to reset your password.”
-     * Validate the “SUBMIT” button is displayed
-     * Validate the “SUBMIT” button is clickable
-     * Validate that the button text is “SUBMIT”
-     */
-    @Test
-    public void validateForgotPassword(){
-        WebElement forgotPasswordLink = driver.findElement(By.linkText("Forgot Password?"));
-        forgotPasswordLink.click();
-        WebElement modalHeading = driver.findElement(By.id("sub_heading"));
-        Assert.assertTrue(modalHeading.isDisplayed());
-        WebElement closeButton = driver.findElement(By.className("delete"));
-        Assert.assertTrue(closeButton.isDisplayed());
-        WebElement emailInputBox =driver.findElement(By.id("email"));
-        Assert.assertTrue(emailInputBox.isDisplayed());
-        WebElement labelOfEmail =driver.findElement(By.cssSelector("label[for='email']"));
-        Assert.assertEquals(labelOfEmail.getText(),"Enter your email address and we'll send you a link to reset your password.");
-        WebElement submitButton = driver.findElement(By.id("submit"));
-        Assert.assertTrue(submitButton.isDisplayed());
-        Assert.assertTrue(submitButton.isEnabled());
-        Assert.assertEquals(submitButton.getText(),"SUBMIT");
+
+    @Test(priority = 4, description = "Test Case 04 - Validate the Forgot Password? Link and Reset Password modal")
+    public void validateTheForgotPasswordLinkAndResetPasswordModal(){
+        project2Page.forgotPasswordLink.click();
+
+        Assert.assertTrue(project2Page.resetPasswordModalTitle.isDisplayed());
+        Assert.assertEquals(project2Page.resetPasswordModalTitle.getText(), "Reset Password");
+
+        Assert.assertTrue(project2Page.resetPasswordModalCloseButton.isDisplayed());
+        Assert.assertTrue(project2Page.resetPasswordModalCloseButton.isEnabled());
+
+        Assert.assertTrue(project2Page.resetPasswordModalHeading.isDisplayed());
+        Assert.assertEquals(project2Page.resetPasswordModalHeading.getText(), "Reset Password");
+
+        Assert.assertTrue(project2Page.resetPasswordModalEmailInputBoxLabel.isDisplayed());
+        Assert.assertEquals(project2Page.resetPasswordModalEmailInputBoxLabel.getText(), "Enter your email address and we'll send you a link to reset your password.");
+
+        Assert.assertTrue(project2Page.resetPasswordModalEmailInputBox.isDisplayed());
+        Assert.assertTrue(project2Page.resetPasswordModalEmailInputBox.isEnabled());
+
+        Assert.assertTrue(project2Page.resetPasswordModalSubmitButton.isDisplayed());
+        Assert.assertTrue(project2Page.resetPasswordModalSubmitButton.isEnabled());
+        Assert.assertEquals(project2Page.resetPasswordModalSubmitButton.getText(), "SUBMIT");
     }
-    /**
-     * Navigate to https://techglobal-training.com/frontend/project-2
-     * Click on the “Forgot Password?” link
-     * Validate that the “Reset Password” modal is displayed
-     * Click on the close button
-     * Validate that the “Reset Password” modal is closed
-     */
 
-    @Test
-    public void validateReset(){
-       /**
-        WindowHandler.switchToChildWindow();
-        Waiter.pause(1);
-        */
+    @Test(priority = 5, description = "Test Case 05 - Validate the Reset Password modal close button")
+    public void validateTheResetPasswordModalCloseButton(){
+        project2Page.forgotPasswordLink.click();
 
-        WebElement forgotPasswordLink = driver.findElement(By.linkText("Forgot Password?"));
-        forgotPasswordLink.click();
-        WebElement modalHeading = driver.findElement(By.cssSelector(".modal"));
-        WebElement closeButton = driver.findElement(By.className("delete"));
-        closeButton.click();
+        Assert.assertTrue(project2Page.resetPasswordModal.isDisplayed());
 
-            try {
-                Assert.assertFalse(modalHeading.isDisplayed());
+        project2Page.resetPasswordModalCloseButton.click();
 
-
-            } catch (StaleElementReferenceException e) {
-               Assert.assertTrue(true);
-            }
-            Waiter.pause(1);
+        //One way to validate the modal is not displayed
+        try{
+            Assert.assertFalse(project2Page.resetPasswordModal.isDisplayed());
+        } catch (NoSuchElementException e){
+            Assert.assertTrue(true);
         }
-
-    /**
-     * Navigate to https://techglobal-training.com/frontend/project-2
-     * Click on the “Forgot Password?” link
-     * Enter an email
-     * Click on the “SUBMIT” button
-     * Validate the form message “A link to reset your password has been sent to your email address.” is displayed under the “SUBMIT” button
-     */
-
-    @Test
-    public void validateFormMessage(){
-        WebElement forgotPasswordLink = driver.findElement(By.linkText("Forgot Password?"));
-        forgotPasswordLink.click();
-        Faker faker =new Faker();
-        WebElement emailInputBox =driver.findElement(By.id("email"));
-        emailInputBox.sendKeys("abcd@gmail.com");
-        WebElement submitButton = driver.findElement(By.id("submit"));
-        submitButton.click();
-        WebElement confirmationMessage = driver.findElement(By.id("confirmation_message"));
-        Assert.assertEquals(confirmationMessage.getText(),"A link to reset your password has been sent to your email address.");
-    }
-    /**
-     * Navigate to https://techglobal-training.com/frontend/project-2
-     * Leave username empty
-     * Leave password empty
-     * Click on the “LOGIN” button
-     * Validate the failure message is displayed as “Invalid Username entered!” above the form
-     */
-    @Test
-    public void validateInvalidLoginWithEmptyCredentials(){
-        WebElement loginButton = driver.findElement(By.id("login_btn"));
-        loginButton.click();
-        WebElement errorMessage= driver.findElement(By.id("error_message"));
-        Assert.assertEquals(errorMessage.getText(),"Invalid Username entered!");
-    }
-    /**
-     * Navigate to https://techglobal-training.com/frontend/project-2
-     * Enter the username as “John”
-     * Enter the password as “Test1234”
-     * Click on the “LOGIN” button
-     * Validate the failure message is displayed as “Invalid Username entered!” above the form
-     */
-    @Test
-    public void validateInvalidLoginWithWrongUsername(){
-        WebElement usernameInputBox = driver.findElement(By.id("username"));
-        WebElement passwordInputBox = driver.findElement(By.id("password"));
-        usernameInputBox.sendKeys("John");
-        Waiter.pause(1);
-        passwordInputBox.sendKeys("Test1234");
-        Waiter.pause(1);
-        WebElement loginButton = driver.findElement(By.id("login_btn"));
-        loginButton.click();
-        WebElement errorMessage= driver.findElement(By.id("error_message"));
-        Assert.assertEquals(errorMessage.getText(),"Invalid Username entered!");
-    }
-    /**
-     * Navigate to https://techglobal-training.com/frontend/project-2
-     * Enter the username as “TechGlobal”
-     * Enter the password as “1234”
-     * Click on the “LOGIN” button
-     * Validate the failure message is displayed as “Invalid Password entered!” above the form
-     */
-    @Test
-    public void validateInvalidLoginWithWrongPassword(){
-        WebElement usernameInputBox = driver.findElement(By.id("username"));
-        WebElement passwordInputBox = driver.findElement(By.id("password"));
-        usernameInputBox.sendKeys("TechGlobal");
-        Waiter.pause(1);
-        passwordInputBox.sendKeys("1234");
-        Waiter.pause(1);
-        WebElement loginButton = driver.findElement(By.id("login_btn"));
-        loginButton.click();
-        WebElement errorMessage= driver.findElement(By.id("error_message"));
-        Assert.assertEquals(errorMessage.getText(),"Invalid Password entered!");
-    }
-    /**
-     * Navigate to https://techglobal-training.com/frontend/project-2
-     * Enter the username as “John”
-     * Enter the password as “1234”
-     * Click on the “LOGIN” button
-     * Validate the failure message is displayed as “Invalid Username entered!” above the form
-     */
-    @Test
-    public void validateInvalidLoginWithWrongPasswordAndUsername(){
-        WebElement usernameInputBox = driver.findElement(By.id("username"));
-        WebElement passwordInputBox = driver.findElement(By.id("password"));
-        usernameInputBox.sendKeys("John");
-        Waiter.pause(1);
-        passwordInputBox.sendKeys("1234");
-        Waiter.pause(1);
-        WebElement loginButton = driver.findElement(By.id("login_btn"));
-        loginButton.click();
-        WebElement errorMessage= driver.findElement(By.id("error_message"));
-        Assert.assertEquals(errorMessage.getText(),"Invalid Username entered!");
     }
 
+    @Test(priority = 6, description = "Test Case 06 - Validate the Reset Password form submission")
+    public void validateTheResetPasswordFormSubmission(){
+        project2Page.forgotPasswordLink.click();
+        project2Page.resetPasswordModalEmailInputBox.sendKeys("johndoe@gmail.com");
+        project2Page.resetPasswordModalSubmitButton.click();
 
+        Assert.assertTrue(project2Page.resetPasswordModalMessage.isDisplayed());
+        Assert.assertEquals(project2Page.resetPasswordModalMessage.getText(), "A link to reset your password has been sent to your email address.");
+    }
+
+    @Test(priority = 7, description = "Test Case 07 - Validate the invalid login with the empty credentials")
+    public void validateTheInvalidLoginWithEmptyCredentials(){
+        project2Page.loginButton.click();
+
+        Assert.assertTrue(project2Page.errorMessage.isDisplayed());
+        Assert.assertEquals(project2Page.errorMessage.getText(), "Invalid Username entered!");
+    }
+
+    @Test(priority = 8, description = "Test Case 08 - Validate the invalid login with the wrong username")
+    public void validateTheInvalidLoginWithTheWrongUsername(){
+        project2Page.login("John", "Test1234");
+
+        Assert.assertTrue(project2Page.errorMessage.isDisplayed());
+        Assert.assertEquals(project2Page.errorMessage.getText(), "Invalid Username entered!");
+    }
+
+    @Test(priority = 9, description = "Test Case 09 - Validate the invalid login with the wrong password")
+    public void validateTheInvalidLoginWithTheWrongPassword(){
+        project2Page.login("TechGlobal", "1234");
+
+        Assert.assertTrue(project2Page.errorMessage.isDisplayed());
+        Assert.assertEquals(project2Page.errorMessage.getText(), "Invalid Password entered!");
+    }
+
+    @Test(priority = 10, description = "Test Case 10 - Validate the invalid login with the wrong username and password")
+    public void validateTheInvalidLoginWithTheWrongUsernameAndPassword(){
+        project2Page.login("John", "1234");
+
+        Assert.assertTrue(project2Page.errorMessage.isDisplayed());
+        Assert.assertEquals(project2Page.errorMessage.getText(), "Invalid Username entered!");
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
