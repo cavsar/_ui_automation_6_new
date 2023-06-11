@@ -23,12 +23,12 @@ public class _05_FacebookTest extends Base {
 
 
     @BeforeMethod
-    public void setPage(){
+    public void setPage() {
         driver.get("https://www.facebook.com/");
     }
 
     @Test
-    public void validateFacebookLoginForm(){
+    public void validateFacebookLoginForm() {
         Assert.assertEquals(driver.getTitle(), "Facebook - log in or sign up");
         Assert.assertEquals(driver.getCurrentUrl(), "https://www.facebook.com/");
 
@@ -78,7 +78,7 @@ public class _05_FacebookTest extends Base {
       */
 
     @Test
-    public void validateFacebookInvalidLoginAttempt(){
+    public void validateFacebookInvalidLoginAttempt() {
         WebElement usernameInputBox = driver.findElement(By.id("email"));
         WebElement passwordInputBox = driver.findElement(By.id("pass"));
         WebElement loginButton = driver.findElement(By.cssSelector("button[id^='u_0_5']"));
@@ -90,10 +90,9 @@ public class _05_FacebookTest extends Base {
         WebElement errorMessage = driver.findElement(By.cssSelector("._9ay7"));
 
         Assert.assertTrue(errorMessage.isDisplayed());
-        Assert.assertEquals(errorMessage.getText(), "The email you entered isn't connected to an account. Find your account and log in.");
+        Assert.assertEquals(errorMessage.getText(), "The email you entered isn’t connected to an account. Find your account and log in.");
     }
 }
-
 
 
 

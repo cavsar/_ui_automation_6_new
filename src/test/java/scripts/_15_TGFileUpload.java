@@ -12,8 +12,7 @@ public class _15_TGFileUpload extends Base {
     @BeforeMethod
     public void setPage(){
         driver.get("https://techglobal-training.com/frontend");
-        driver.findElement(By.id("card-13")).click();
-    }
+        driver.findElement(By.id("card-13")).click();}
 
 
     /**

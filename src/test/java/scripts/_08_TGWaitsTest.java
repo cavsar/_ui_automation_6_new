@@ -41,6 +41,7 @@ public class _08_TGWaitsTest extends Base {
         blueBoxButton.click();
 
         WebElement blueBox = driver.findElement(By.cssSelector("button[class*='blue_box']"));
+        Waiter.pause(30);
 
 
         Waiter.waitForVisibilityOfElement(blueBox, 40);

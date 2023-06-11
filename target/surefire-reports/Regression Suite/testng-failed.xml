@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [All Test Suite]">
-  <test thread-count="5" verbose="0" name="/Users/akinkaya/IdeaProjects/ui_automation_6/src/test/java/scripts(failed)">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Regression Suite]">
+  <test thread-count="5" verbose="0" name="All Functionalities(failed)">
     <classes>
       <class name="scripts._15_TGFileUpload">
         <methods>
@@ -27,6 +27,14 @@
           <include name="setPage"/>
         </methods>
       </class> <!-- scripts._08_TGWaitsTest -->
+      <class name="scripts._01_ProjectTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="validateContactUsInfo"/>
+          <include name="setPage"/>
+        </methods>
+      </class> <!-- scripts._01_ProjectTest -->
     </classes>
-  </test> <!-- /Users/akinkaya/IdeaProjects/ui_automation_6/src/test/java/scripts(failed) -->
-</suite> <!-- Failed suite [All Test Suite] -->
+  </test> <!-- All Functionalities(failed) -->
+</suite> <!-- Failed suite [Regression Suite] -->
