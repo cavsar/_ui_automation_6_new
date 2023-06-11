@@ -8,7 +8,7 @@ import utils.Driver;
 public class Project2Page {
 
     //Modify default constructor to introduce web elements to driver!
-    public Project2Page(){
+    public Project2Page() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -68,7 +68,7 @@ public class Project2Page {
 
 
     //Reusable methods
-    public void login(String username, String password){
+    public void login(String username, String password) {
         usernameInputBox.sendKeys(username);
         passwordInputBox.sendKeys(password);
         loginButton.click();
