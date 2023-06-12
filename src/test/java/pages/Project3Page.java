@@ -18,37 +18,43 @@ public class Project3Page {
     public WebElement roundTripRadioButton;
 
 
-    @FindBy(css = ".field>div:nth-child(2)")
+    @FindBy(xpath = "(//div[@class='field']/label)[1]")
     public WebElement cabinClassLAbel;
 
-    @FindBy(css = ".field>div:nth-child(2)>select:nth-child(1)")
+    @FindBy(xpath = "(//div[@style='width: 100%;']/select)[1]")
     public WebElement cabinClassDropdown;
 
-    @FindBy(css = "form>div>div:nth-child(3)>label")
+    @FindBy(xpath = "(//div[@class='field']/label)[2]")
     public WebElement fromLAbel;
 
-    @FindBy(css = "form>div>div:nth-child(3)>div")
+    @FindBy(xpath = "(//div[@style='width: 100%;']/select)[2]")
     public WebElement fromDropdown;
 
-    @FindBy(css = "form>div>div:nth-child(4)>label")
+    @FindBy(xpath = "(//div[@class='field']/label)[3]")
     public WebElement toLAbel;
 
-    @FindBy(css = "form>div>div:nth-child(4)>div")
+    @FindBy(xpath = "(//div[@style='width: 100%;']/select)[3]")
     public WebElement toDropdown;
 
-    @FindBy(css = "form>div>div:nth-child(5)>label")
+    @FindBy(xpath = "(//div[@class='field']/label)[4]")
     public WebElement departLabel;
 
     @FindBy(css = ".react-date-picker")
     public WebElement datePickerDepart;
 
-    @FindBy(css = "form>div>div:nth-child(6)>label")
+    @FindBy(css="div[class^='Projects_']>div:nth-child(5) input[placeholder='dd']")
+    public WebElement dateOfDeparture;
+
+    @FindBy(xpath = "(//div[@class='field']/label)[5]")
     public WebElement returnLabel;
 
     @FindBy(css = ".react-date-picker__inputGroup")
     public WebElement datePickerReturn;
 
-    @FindBy(css = "form>div>div:nth-child(7)>label")
+    @FindBy(css="div[class= 'field']:nth-child(6) input[name='month']")
+    public WebElement dateOfReturn;
+
+    @FindBy(xpath = "(//div[@class='field']/label)[6]")
     public WebElement numPassengerLabel;
 
     @FindBy(css = "form>div>div:nth-child(7)>div")
@@ -57,7 +63,7 @@ public class Project3Page {
     @FindBy(css = "form>div>div:nth-child(7)>div>select")
     public WebElement passengerNumbers;
 
-    @FindBy(css = "form>div>div:nth-child(8)>label")
+    @FindBy(xpath = "(//div[@class='field']/label)[7]")
     public WebElement Passenger1Label;
 
     @FindBy(css = "form>div>div:nth-child(8)>div")
@@ -66,8 +72,14 @@ public class Project3Page {
     @FindBy(css = "form>div>div:nth-child(8)>div>select")
     public WebElement PassengerType;
 
+    @FindBy(css = "form>div>div:nth-child(8)>div>select")
+    public WebElement PassengerType2;
+
     @FindBy(css = "button[class^='Button']")
     public WebElement bookButton;
+
+    @FindBy(css = "div[class='ml-3']")
+    public WebElement bookInfo;
 
 
 }

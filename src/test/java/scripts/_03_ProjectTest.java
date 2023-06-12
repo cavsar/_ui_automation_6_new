@@ -2,13 +2,15 @@ package scripts;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pages.Project2Page;
+
 import pages.Project3Page;
 import utils.DropdownHandler;
+import utils.Waiter;
+
 
 import java.util.List;
 
@@ -73,8 +75,9 @@ public class _03_ProjectTest extends Base {
 
 
     }
-    @Test(priority = 2, description ="TC02=Validate the Book your trip form when Round trip is selected")
-    public void validateTestCase2(){
+
+    @Test(priority = 2, description = "TC02=Validate the Book your trip form when Round trip is selected")
+    public void validateTestCase2() {
         /**
          * Navigate to https://techglobal-training.com/frontend/project-3
          * Click on the “Round trip” radio button and validate it is selected
@@ -136,15 +139,100 @@ public class _03_ProjectTest extends Base {
      * Cabin Class: Business
      */
     @Test(priority = 3, description = "Test Case 03 - Validate the booking for 1 passenger and one way")
-    public void validateTest3(){
+    public void validateTest3() {
         project3Page.oneWayRadioButton.click();
-        List<WebElement> cabinClassOptions = driver.findElements(By.cssSelector(".field>div:nth-child(2) >select>option"));
-        DropdownHandler.clickDropdownOption(project3Page.cabinClassDropdown,cabinClassOptions,"Business");
-        DropdownHandler.clickDropdownOption(project3Page.toDropdown, cabinClassOptions,"Illinois");
-        DropdownHandler.clickDropdownOption(project3Page.toDropdown, cabinClassOptions,"Florida");
+        List<WebElement> OptionsCabinClass = driver.findElements(By.cssSelector("div[class^='Projects_']>div:nth-child(2)>div>select>option"));
+        DropdownHandler.clickDropdownOption(project3Page.cabinClassDropdown, OptionsCabinClass, "Business");
+        List<WebElement> OptionsFrom = driver.findElements(By.cssSelector("div[class^='Projects_']>div:nth-child(3)>div>select>option"));
+        DropdownHandler.clickDropdownOption(project3Page.fromDropdown, OptionsFrom, "Illinois");
+        List<WebElement> OptionsTo = driver.findElements(By.cssSelector("div[class^='Projects_']>div:nth-child(4)>div>select>option"));
+        DropdownHandler.clickDropdownOption(project3Page.toDropdown, OptionsTo, "Florida");
 
+        project3Page.dateOfDeparture.sendKeys("18");
 
+        project3Page.bookButton.click();
+        System.out.println(project3Page.bookInfo);
 
+    }
 
+    /**
+     * Navigate to https://techglobal-training.com/frontend/project-3
+     * Select the “Round trip” radio button
+     * Select “First” for the “Cabin Class” dropdown
+     * Select “California” for the “From” dropdown
+     * Select “Illinois” for the “To” dropdown
+     * Select the next week for the ”Depart”
+     * Select the next month for the “Return”
+     * Select “1” for the “Number of passengers” dropdown
+     * Select “Adult (16-64)” for the Passenger 1 dropdown
+     * Click on the “BOOK” button
+     * Validate the booking information displayed below
+     * DEPART
+     * CA to IL
+     * {dynamic date}
+     * Number of passengers: 1
+     * Passenger 1: Adult (16-64)
+     * Cabin Class: First
+     * <p>
+     * <p>
+     * RETURN
+     * IL to CA
+     * {dynamic date}
+     */
+    @Test(priority = 4, description = "Test Case 04 - Validate the booking for 1 passenger and round trip")
+    public void validateTest4() {
+        project3Page.roundTripRadioButton.click();
+        List<WebElement> OptionsCabinClass = driver.findElements(By.cssSelector("div[class^='Projects_']>div:nth-child(2)>div>select>option"));
+        DropdownHandler.clickDropdownOption(project3Page.cabinClassDropdown, OptionsCabinClass, "First");
+        List<WebElement> OptionsFrom = driver.findElements(By.cssSelector("div[class^='Projects_']>div:nth-child(3)>div>select>option"));
+        DropdownHandler.clickDropdownOption(project3Page.fromDropdown, OptionsFrom, "California");
+        List<WebElement> OptionsTo = driver.findElements(By.cssSelector("div[class^='Projects_']>div:nth-child(4)>div>select>option"));
+        DropdownHandler.clickDropdownOption(project3Page.toDropdown, OptionsTo, "Illinois");
+        project3Page.dateOfDeparture.sendKeys("18");
+        project3Page.dateOfReturn.sendKeys("7");
+        project3Page.bookButton.click();
+        Waiter.pause(3);
+        System.out.println(project3Page.bookInfo);
+
+    }
+    /**
+     * Navigate to https://techglobal-training.com/frontend/project-3
+     * Select the “One way” radio button
+     * Select “Premium Economy” for the “Cabin Class” dropdown
+     * Select “New York” for the “From” dropdown
+     * Select “Texas” for the “To” dropdown
+     * Select the next day for the ”Depart”
+     * Select “2” for the “Number of passengers” dropdown
+     * Select “Adult (16-64)” for the Passenger 1 dropdown
+     * Select “Child (2-11)” for the Passenger 2 dropdown
+     * Click on the “BOOK” button
+     * Validate the booking information displayed below
+     * DEPART
+     * NY to TX
+     * {dynamic date}
+     * Number of passengers: 2
+     * Passenger 1: Adult (16-64)
+     * Passenger 2: Child (2-11)
+     * Cabin Class: Premium Economy
+     */
+
+    @Test(priority = 5, description = "Test Case 05 - Validate the booking for 2 passengers and one way")
+    public void validateTest5(){
+        project3Page.oneWayRadioButton.click();
+        List<WebElement> OptionsCabinClass = driver.findElements(By.cssSelector("div[class^='Projects_']>div:nth-child(2)>div>select>option"));
+        DropdownHandler.clickDropdownOption(project3Page.cabinClassDropdown, OptionsCabinClass, "Premium Economy");
+        List<WebElement> OptionsFrom = driver.findElements(By.cssSelector("div[class^='Projects_']>div:nth-child(3)>div>select>option"));
+        DropdownHandler.clickDropdownOption(project3Page.fromDropdown, OptionsFrom, "New York");
+        List<WebElement> OptionsTo = driver.findElements(By.cssSelector("div[class^='Projects_']>div:nth-child(4)>div>select>option"));
+        DropdownHandler.clickDropdownOption(project3Page.toDropdown, OptionsTo, "Texas");
+        project3Page.dateOfDeparture.sendKeys("12");
+        project3Page.passengerNumbers.sendKeys("2");
+        List<WebElement>OptionPassengerType= driver.findElements(By.cssSelector("form>div>div:nth-child(8)>div>select>option"));
+        DropdownHandler.clickDropdownOption(project3Page.PassengerType,OptionPassengerType,"Adult (16-64)");
+        List<WebElement>OptionPassengerType2= driver.findElements(By.cssSelector("form>div>div:nth-child(9)>div>select>option"));
+        DropdownHandler.clickDropdownOption(project3Page.PassengerType,OptionPassengerType2,"Child (2-11)");
+        project3Page.bookButton.click();
+        Waiter.pause(3);
+        System.out.println(project3Page.bookInfo);
     }
 }
