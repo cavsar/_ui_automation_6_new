@@ -83,5 +83,18 @@ public class Project3Page {
     @FindBy(css = ".ml-3 p")
     public List<WebElement> bookInfo;
 
+    @FindBy (css ="div[class^='Projects_']>div:nth-child(2)>div>select>option")
+    public List<WebElement> OptionsCabinClass;
 
+    @FindBy(css = "div[class^='Projects_']>div:nth-child(3)>div>select>option")
+    public List<WebElement> OptionsFrom;
+
+    @FindBy (css = "div[class^='Projects_']>div:nth-child(4)>div>select>option")
+    public List<WebElement> OptionsTo;
+
+    @FindBy (css = "form>div>div:nth-child(8)>div>select>option")
+    public  List<WebElement>OptionPassengerType;
+
+    @FindBy (css = "form>div>div:nth-child(9)>div>select>option")
+    public  List<WebElement>OptionPassengerType2;
 }

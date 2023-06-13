@@ -141,14 +141,10 @@ public class _03_ProjectTest extends Base {
     @Test(priority = 3, description = "Test Case 03 - Validate the booking for 1 passenger and one way")
     public void validateTest3() {
         project3Page.oneWayRadioButton.click();
-        List<WebElement> OptionsCabinClass = driver.findElements(By.cssSelector("div[class^='Projects_']>div:nth-child(2)>div>select>option"));
-        DropdownHandler.clickDropdownOption(project3Page.cabinClassDropdown, OptionsCabinClass, "Business");
-        List<WebElement> OptionsFrom = driver.findElements(By.cssSelector("div[class^='Projects_']>div:nth-child(3)>div>select>option"));
-        DropdownHandler.clickDropdownOption(project3Page.fromDropdown, OptionsFrom, "Illinois");
-        List<WebElement> OptionsTo = driver.findElements(By.cssSelector("div[class^='Projects_']>div:nth-child(4)>div>select>option"));
-        DropdownHandler.clickDropdownOption(project3Page.toDropdown, OptionsTo, "Florida");
-        List<WebElement>OptionPassengerType= driver.findElements(By.cssSelector("form>div>div:nth-child(8)>div>select>option"));
-        DropdownHandler.clickDropdownOption(project3Page.PassengerType,OptionPassengerType,"Senior (65+)");
+        DropdownHandler.clickDropdownOption(project3Page.cabinClassDropdown, project3Page.OptionsCabinClass, "Business");
+        DropdownHandler.clickDropdownOption(project3Page.fromDropdown, project3Page.OptionsFrom, "Illinois");
+        DropdownHandler.clickDropdownOption(project3Page.toDropdown, project3Page.OptionsTo, "Florida");
+        DropdownHandler.clickDropdownOption(project3Page.PassengerType,project3Page.OptionPassengerType,"Senior (65+)");
         project3Page.dateOfDeparture.sendKeys("18");
 
         project3Page.bookButton.click();
@@ -187,12 +183,9 @@ public class _03_ProjectTest extends Base {
     @Test(priority = 4, description = "Test Case 04 - Validate the booking for 1 passenger and round trip")
     public void validateTest4() {
         project3Page.roundTripRadioButton.click();
-        List<WebElement> OptionsCabinClass = driver.findElements(By.cssSelector("div[class^='Projects_']>div:nth-child(2)>div>select>option"));
-        DropdownHandler.clickDropdownOption(project3Page.cabinClassDropdown, OptionsCabinClass, "First");
-        List<WebElement> OptionsFrom = driver.findElements(By.cssSelector("div[class^='Projects_']>div:nth-child(3)>div>select>option"));
-        DropdownHandler.clickDropdownOption(project3Page.fromDropdown, OptionsFrom, "California");
-        List<WebElement> OptionsTo = driver.findElements(By.cssSelector("div[class^='Projects_']>div:nth-child(4)>div>select>option"));
-        DropdownHandler.clickDropdownOption(project3Page.toDropdown, OptionsTo, "Illinois");
+        DropdownHandler.clickDropdownOption(project3Page.cabinClassDropdown, project3Page.OptionsCabinClass, "First");
+        DropdownHandler.clickDropdownOption(project3Page.fromDropdown, project3Page.OptionsFrom, "California");
+        DropdownHandler.clickDropdownOption(project3Page.toDropdown, project3Page.OptionsTo, "Illinois");
         project3Page.dateOfDeparture.sendKeys("18");
         project3Page.dateOfReturn.sendKeys("7");
         project3Page.bookButton.click();
@@ -226,18 +219,13 @@ public class _03_ProjectTest extends Base {
     @Test(priority = 5, description = "Test Case 05 - Validate the booking for 2 passengers and one way")
     public void validateTest5(){
         project3Page.oneWayRadioButton.click();
-        List<WebElement> OptionsCabinClass = driver.findElements(By.cssSelector("div[class^='Projects_']>div:nth-child(2)>div>select>option"));
-        DropdownHandler.clickDropdownOption(project3Page.cabinClassDropdown, OptionsCabinClass, "Premium Economy");
-        List<WebElement> OptionsFrom = driver.findElements(By.cssSelector("div[class^='Projects_']>div:nth-child(3)>div>select>option"));
-        DropdownHandler.clickDropdownOption(project3Page.fromDropdown, OptionsFrom, "New York");
-        List<WebElement> OptionsTo = driver.findElements(By.cssSelector("div[class^='Projects_']>div:nth-child(4)>div>select>option"));
-        DropdownHandler.clickDropdownOption(project3Page.toDropdown, OptionsTo, "Texas");
+        DropdownHandler.clickDropdownOption(project3Page.cabinClassDropdown, project3Page.OptionsCabinClass, "Premium Economy");
+        DropdownHandler.clickDropdownOption(project3Page.fromDropdown, project3Page.OptionsFrom, "New York");
+        DropdownHandler.clickDropdownOption(project3Page.toDropdown, project3Page.OptionsTo, "Texas");
         project3Page.dateOfDeparture.sendKeys("12");
         project3Page.passengerNumbers.sendKeys("2");
-        List<WebElement>OptionPassengerType= driver.findElements(By.cssSelector("form>div>div:nth-child(8)>div>select>option"));
-        DropdownHandler.clickDropdownOption(project3Page.PassengerType,OptionPassengerType,"Adult (16-64)");
-        List<WebElement>OptionPassengerType2= driver.findElements(By.cssSelector("form>div>div:nth-child(9)>div>select>option"));
-        DropdownHandler.clickDropdownOption(project3Page.PassengerType,OptionPassengerType2,"Child (2-11)");
+        DropdownHandler.clickDropdownOption(project3Page.PassengerType,project3Page.OptionPassengerType,"Adult (16-64)");
+        DropdownHandler.clickDropdownOption(project3Page.PassengerType,project3Page.OptionPassengerType2,"Child (2-11)");
         project3Page.bookButton.click();
         Waiter.pause(3);
         String [] expectedResults = {"Mon Jun 12 2023","Number of Passengers: 2","Passenger 1: Adult (16-64)","Passenger 2: Child (2-11)","Cabin class: Premium Economy"};
