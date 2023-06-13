@@ -3,22 +3,15 @@
 <suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Regression Suite]">
   <test thread-count="5" verbose="0" name="All Functionalities(failed)">
     <classes>
-      <class name="scripts._15_TGFileUpload">
+      <class name="scripts._01_ProjectTest">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="validateContactUsInfo"/>
           <include name="setPage"/>
-          <include name="basicFileUpload"/>
+          <include name="validateTheFormSubmission"/>
         </methods>
-      </class> <!-- scripts._15_TGFileUpload -->
-      <class name="scripts._05_FacebookTest">
-        <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="validateFacebookInvalidLoginAttempt"/>
-          <include name="setPage"/>
-        </methods>
-      </class> <!-- scripts._05_FacebookTest -->
+      </class> <!-- scripts._01_ProjectTest -->
       <class name="scripts._08_TGWaitsTest">
         <methods>
           <include name="setUp"/>
@@ -27,14 +20,14 @@
           <include name="setPage"/>
         </methods>
       </class> <!-- scripts._08_TGWaitsTest -->
-      <class name="scripts._01_ProjectTest">
+      <class name="scripts._15_TGFileUpload">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="validateContactUsInfo"/>
           <include name="setPage"/>
+          <include name="basicFileUpload"/>
         </methods>
-      </class> <!-- scripts._01_ProjectTest -->
+      </class> <!-- scripts._15_TGFileUpload -->
     </classes>
   </test> <!-- All Functionalities(failed) -->
 </suite> <!-- Failed suite [Regression Suite] -->

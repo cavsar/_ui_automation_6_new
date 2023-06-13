@@ -147,13 +147,18 @@ public class _03_ProjectTest extends Base {
         DropdownHandler.clickDropdownOption(project3Page.fromDropdown, OptionsFrom, "Illinois");
         List<WebElement> OptionsTo = driver.findElements(By.cssSelector("div[class^='Projects_']>div:nth-child(4)>div>select>option"));
         DropdownHandler.clickDropdownOption(project3Page.toDropdown, OptionsTo, "Florida");
-
+        List<WebElement>OptionPassengerType= driver.findElements(By.cssSelector("form>div>div:nth-child(8)>div>select>option"));
+        DropdownHandler.clickDropdownOption(project3Page.PassengerType,OptionPassengerType,"Senior (65+)");
         project3Page.dateOfDeparture.sendKeys("18");
 
         project3Page.bookButton.click();
-        System.out.println(project3Page.bookInfo);
+        String [] expectedResults = {"Sun Jun 18 2023","Number of Passengers: 1","Passenger 1: Senior (65+)","Cabin class: Business"};
+        for (int i = 0; i < project3Page.bookInfo.size(); i++) {
+            Assert.assertEquals(project3Page.bookInfo.get(i).getText(),expectedResults[i]);
+            System.out.println(project3Page.bookInfo);
+        }}
 
-    }
+
 
     /**
      * Navigate to https://techglobal-training.com/frontend/project-3
@@ -192,9 +197,11 @@ public class _03_ProjectTest extends Base {
         project3Page.dateOfReturn.sendKeys("7");
         project3Page.bookButton.click();
         Waiter.pause(3);
-        System.out.println(project3Page.bookInfo);
-
-    }
+        String [] expectedResults = {"Sun Jun 18 2023", "Tue Jul 18 2023","Number of Passengers: 1","Passenger 1: Adult (16-64)","Cabin class: First"};
+        for (int i = 0; i < project3Page.bookInfo.size(); i++) {
+            Assert.assertEquals(project3Page.bookInfo.get(i).getText(),expectedResults[i]);
+            System.out.println(project3Page.bookInfo);
+    }}
     /**
      * Navigate to https://techglobal-training.com/frontend/project-3
      * Select the “One way” radio button
@@ -233,6 +240,9 @@ public class _03_ProjectTest extends Base {
         DropdownHandler.clickDropdownOption(project3Page.PassengerType,OptionPassengerType2,"Child (2-11)");
         project3Page.bookButton.click();
         Waiter.pause(3);
+        String [] expectedResults = {"Mon Jun 12 2023","Number of Passengers: 2","Passenger 1: Adult (16-64)","Passenger 2: Child (2-11)","Cabin class: Premium Economy"};
+        for (int i = 0; i < project3Page.bookInfo.size(); i++) {
+            Assert.assertEquals(project3Page.bookInfo.get(i).getText(),expectedResults[i]);
         System.out.println(project3Page.bookInfo);
     }
-}
+}}

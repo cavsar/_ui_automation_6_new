@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utils.Driver;
 
+import java.util.List;
+
 public class Project3Page {
     public Project3Page() {
 
@@ -78,8 +80,8 @@ public class Project3Page {
     @FindBy(css = "button[class^='Button']")
     public WebElement bookButton;
 
-    @FindBy(css = "div[class='ml-3']")
-    public WebElement bookInfo;
+    @FindBy(css = ".ml-3 p")
+    public List<WebElement> bookInfo;
 
 
 }
